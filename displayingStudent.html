@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id= root></div>
+    <script type="text/babel">
+        function App(){
+            let students = [
+            {
+                name:'ritik',
+                age:10,
+                marks:34
+            },
+            {
+                name:'saurabh',
+                age:12,
+                marks:35
+            },
+            {
+                name:'ram',
+                age:15,
+                marks:89
+            }];
+
+            return (
+                    <>
+                    <h1>STUDENT TABLE</h1>
+                    <table >
+                        <tr>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Marks</th>
+                        </tr>
+                        {students.map((student) =>(
+                            <tr>
+                                <td>{student.name}</td>
+                                <td>{student.age}</td>
+                                <td>{student.marks}</td>
+                            </tr>
+                        ))}
+
+
+                    </table>
+                    </>
+                )
+        }
+        const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+        rootElement.render(<App />) 
+    </script>
+</body>
+</html>
